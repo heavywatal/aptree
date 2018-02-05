@@ -1,11 +1,7 @@
-sackin3 = function(n, model, p=1 / 3) {
+sackin3 = function(n, sample_func, p=1 / 3) {
   if (n <= 2) return(0)
-  l <- switch(model,
-    "biased" = sample(n - 1, 1, .5 * stats::dbinom(0:(n - 2), size = (n - 2), prob = p) + .5 * stats::dbinom(0:(n - 2), size = (n - 2), prob = (1 - p))),
-    "yule" = sample(n - 1, 1),
-    "aldous" = sample(n - 1, 1, prob = (1 / (1:(n - 1)) / ((n - 1):1)))
-  )
-  sackin3(l, model, p) + sackin3(n - l, model, p) + n
+  l <- sample_func(n, p)
+  sackin3(l, sample_func, p) + sackin3(n - l, sample_func, p) + n
 }
 
 #' @rdname sackin
@@ -24,8 +20,13 @@ sackin.test = function(tree, model=c("yule", "pda"), alternative=c("less", "grea
   }
   else {
     lind.mc <- NULL
+    sample_func = switch(model,
+      "biased" = sample_biased,
+      "yule" = sample_yule,
+      "aldous" = sample_aldous
+    )
     for (i in 1:n.mc) {
-      lind.mc <- c(lind.mc, sackin3(tip.number.mc, model))
+      lind.mc <- c(lind.mc, sackin3(tip.number.mc, sample_func))
     }
   }
   res <- stats::ecdf(lind.mc)
@@ -54,5 +55,5 @@ sackin.test = function(tree, model=c("yule", "pda"), alternative=c("less", "grea
   cat(" model", "\n")
   cat("Note : the p-value was computed using a Monte-Carlo method")
   cat("\n")
-  list(model = model, statistic = stat, p.value = p.value, alternative = alternative)
+  list(model = model, statistic = stat_norm, p.value = p.value, alternative = alternative)
 }

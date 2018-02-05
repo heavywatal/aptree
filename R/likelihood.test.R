@@ -16,7 +16,7 @@ likelihood.test = function(tree, model=c("yule", "pda"), alternative=c("two.side
   cat(stat, "\n")
   cat("p.value = ")
   if (alternative == "two.sided") {
-    p.value <- 2 * (1 - stats::pnorm(abs(stat)))
+    p.value <- 2 * stats::pnorm(abs(stat), lower.tail=FALSE)
     cat(p.value, "\n")
     cat("alternative hypothesis: the tree does not fit the model")
   }
@@ -26,11 +26,10 @@ likelihood.test = function(tree, model=c("yule", "pda"), alternative=c("two.side
     cat("alternative hypothesis: the tree is more balanced than predicted by the model")
   }
   else if (alternative == "greater") {
-    p.value <- 1 - stats::pnorm(stat)
+    p.value <- stats::pnorm(stat, lower.tail=FALSE)
     cat(p.value, "\n")
     cat("alternative hypothesis: the tree is less balanced than predicted by the model")
   }
   cat("\n")
-  cat("Note: the p.value was computed according to a normal approximation\n")
   list(model = model, statistic = stat, p.value = p.value, alternative = alternative)
 }
