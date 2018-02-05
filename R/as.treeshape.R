@@ -1,3 +1,2 @@
 "as.treeshape" <-
-function (x, ...) UseMethod("as.treeshape")
-
+  function(x, ...) UseMethod("as.treeshape")
