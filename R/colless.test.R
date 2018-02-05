@@ -1,7 +1,6 @@
 #' @rdname colless
 #' @export
 colless.test = function(tree, model="yule", alternative="less", n.mc=500) {
-
   colless3 = function(n, model, p=1 / 3) {
     if (n > 2) {
       l <- switch(model,

@@ -1,3 +1,4 @@
+#' @export
 maxlik.betasplit <- function(phylo, up = 10, remove.outgroup = FALSE, confidence.interval = "none",
                              conf.level = 0.95, size.bootstrap = 100) {
   vrais.aldous.fin <- function(i, n, b) {
@@ -9,7 +10,7 @@ maxlik.betasplit <- function(phylo, up = 10, remove.outgroup = FALSE, confidence
     return(aux)
   }
   bbalance <- function(phylo) {
-    return(t(apply(balance(phylo), FUN = function(x) {
+    return(t(apply(ape::balance(phylo), FUN = function(x) {
       c(x[1], x[1] + x[2])
     }, MARGIN = 1)))
   }
@@ -27,7 +28,7 @@ maxlik.betasplit <- function(phylo, up = 10, remove.outgroup = FALSE, confidence
   }
   logvrais.aldous.phylo <- function(b, phylo, remove.outgroup = TRUE) {
     if (class(phylo) == "treeshape") {
-      bal <- bbalance(as.phylo(phylo))
+      bal <- bbalance(ape::as.phylo(phylo))
     }
     if (class(phylo) == "phylo") {
       bal <- bbalance(phylo)
@@ -50,7 +51,7 @@ maxlik.betasplit <- function(phylo, up = 10, remove.outgroup = FALSE, confidence
     }, b = b, MARGIN = 1))))
   }
   if (class(phylo) == "treeshape") {
-    bal <- bbalance(as.phylo(phylo))
+    bal <- bbalance(ape::as.phylo(phylo))
   }
   if (class(phylo) == "phylo") {
     bal <- bbalance(phylo)

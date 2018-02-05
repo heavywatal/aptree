@@ -48,7 +48,7 @@ as.treeshape.phylo = function(x, model=NULL, p, ...) {
           tmp = raldous(bin[i, 2])
         }
 
-        tmp <- as.phylo(tmp)
+        tmp <- ape::as.phylo(tmp)
 
         print(tmp$edge)
 

@@ -1,3 +1,4 @@
+#' @export
 ryule <- function(n) {
   lst <- (-n):(-1)
 

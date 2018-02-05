@@ -1,4 +1,4 @@
-
+#' @export
 smaller.clade.spectrum2 <- function(tree) {
   if (identical(tree, NULL)) {
     stop("invalid tree", "\n")

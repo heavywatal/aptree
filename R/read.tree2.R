@@ -1,3 +1,4 @@
+#' @export
 read.tree2 <- function(file = "", format = "Newick", rooted = TRUE, text = NULL,
                        tree.names = NULL, skip = 0, comment.char = "#", ...) {
   if (!is.null(text)) {
