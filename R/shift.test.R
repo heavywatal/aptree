@@ -46,7 +46,7 @@ shift.test <- function(tree, node, lambda1 = 1, lambda2 = 100, nrep = 1000, sile
     cat("Delta1 statistic = ", Delta, "\n")
     cat("P-value = ", P, "\n")
     cat("")
-    cat("alternative hypothesis: the diversification rate shift is less than ", lambda2 / lambda1, " fold 
+    cat("alternative hypothesis: the diversification rate shift is less than ", lambda2 / lambda1, " fold
 the ancestral rate \n")
     cat("Note: The P-value was computed using ", nrep, " Monte-Carlo replicates. \n")
   }

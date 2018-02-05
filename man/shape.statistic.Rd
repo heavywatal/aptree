@@ -4,7 +4,7 @@
 \title{ Computes the log of the likelihood ratio (yule/pda) }
 
 \description{
-\code{shape.statistic} computes the logarithm of the ratio of the likelihoods under the Yule model and the PDA model of the given tree. 
+\code{shape.statistic} computes the logarithm of the ratio of the likelihoods under the Yule model and the PDA model of the given tree.
 }
 
 \usage{
@@ -31,11 +31,11 @@ An object of class \code{numeric} containing the shape statistic of the tree.
 Fill, J. A. (1996), On the Distribution of Binary Search Trees under the Random Permutation Model. \emph{Random Structures and Algorithms}, \bold{8}, 1 -- 25, for more details about the normalization and proofs.
 }
 
-\author{ 
-Michael Blum <\email{michael.blum@imag.fr}> \cr
-Nicolas Bortolussi <\email{nicolas.bortolussi@imag.fr}> \cr
-Eric Durand <\email{eric.durand@imag.fr}> \cr
-Olivier François <\email{olivier.francois@imag.fr}> 
+\author{
+Michael Blum <\email{michael.blum@imag.fr}>
+Nicolas Bortolussi <\email{nicolas.bortolussi@imag.fr}>
+Eric Durand <\email{eric.durand@imag.fr}>
+Olivier Francois <\email{olivier.francois@imag.fr}>
 }
 
 \examples{
@@ -47,9 +47,9 @@ summary(tree)
 likelihood.test(tree,  model = "yule", alternative = "two.sided")
 likelihood.test(tree,  model = "pda", alternative = "two.sided")
 
-## Histogram of shape statistics for a list of Yule trees 
+## Histogram of shape statistics for a list of Yule trees
 ##      (may take some time to compute)
-main="Histogram of shape statistics"; xlab="shape statistic"	
+main="Histogram of shape statistics"; xlab="shape statistic"
 hist(sapply(rtreeshape(1000,tip.number=100,model="yule"),FUN=shape.statistic,
       norm="yule"), freq=FALSE, main=main, xlab=xlab)
 

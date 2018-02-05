@@ -5,9 +5,9 @@
 \title{ Conversion among tree objects }
 
 \description{
-\code{as.treeshape} is a generic function which converts an tree object into an object of class \code{"treeshape"}. There is currently a single method for this generic function. 
+\code{as.treeshape} is a generic function which converts an tree object into an object of class \code{"treeshape"}. There is currently a single method for this generic function.
 }
-  
+
 \usage{
 \method{as.treeshape}{phylo}(x, model, p, ...)
 }
@@ -28,14 +28,14 @@ An object of class \code{"treeshape"} or an object of classes \code{"treeshape"}
 }
 
 \author{
-Michael Blum <\email{michael.blum@imag.fr}>\cr
-Nicolas Bortolussi <\email{nicolas.bortolussi@imag.fr}>\cr
-Eric Durand <\email{eric.durand@imag.fr}>\cr
+Michael Blum <\email{michael.blum@imag.fr}>
+Nicolas Bortolussi <\email{nicolas.bortolussi@imag.fr}>
+Eric Durand <\email{eric.durand@imag.fr}>
 Olivier Francois <\email{olivier.francois@imag.fr}>
 }
 
-\seealso{ 
-\code{\link{as.phylo.treeshape}}\cr
+\seealso{
+\code{\link{as.phylo.treeshape}}
 }
 
 \examples{
@@ -44,12 +44,12 @@ library(ape)
 data(bird.orders)
 ## Data set from APE
 plot(bird.orders)
-  
+
 ## "treeshape" conversion
 tree=as.treeshape(bird.orders)
 plot(tree)
 summary(tree)
- 
+
 }
 
 \keyword{manip}

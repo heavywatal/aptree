@@ -29,20 +29,20 @@ A list containing the following arguments :
 }
 
 \references{
-Blum, M. and François, O. (2005) Minimal clade size and external branch length under the neutral coalescent \emph{Advances in Applied Probability} (2005), \bold{37.3}. 
+Blum, M. and Francois, O. (2005) Minimal clade size and external branch length under the neutral coalescent \emph{Advances in Applied Probability} (2005), \bold{37.3}.
 }
 
-\author{ 
-Michael Blum <\email{michael.blum@imag.fr}>\cr
-Nicolas Bortolussi <\email{nicolas.bortolussi@imag.fr}> \cr
-Eric Durand <\email{eric.durand@imag.fr}>\cr
+\author{
+Michael Blum <\email{michael.blum@imag.fr}>
+Nicolas Bortolussi <\email{nicolas.bortolussi@imag.fr}>
+Eric Durand <\email{eric.durand@imag.fr}>
 Olivier Francois <\email{olivier.francois@imag.fr}>
 }
 
 
-\seealso{ 
-\code{\link{sackin.test}} \cr
-\code{\link{colless.test}} 
+\seealso{
+\code{\link{sackin.test}}
+\code{\link{colless.test}}
 }
 
 \examples{
@@ -51,7 +51,7 @@ Olivier Francois <\email{olivier.francois@imag.fr}>
 tr<-rtreeshape(n=1,tip.number=50,model="pda")
 tr<-tr[[1]]
 
-## Test the yule hypothesis, using subtrees of size 2 (Cherries), 
+## Test the yule hypothesis, using subtrees of size 2 (Cherries),
 ##      with the alternative hypothesis "less"
 subtree.test(tr,size=2,alternative="less")
 }

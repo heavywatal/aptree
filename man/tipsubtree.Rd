@@ -21,11 +21,11 @@ tipsubtree(tree, tips, numeric=FALSE)
 An object of class \code{"treeshape"}
 }
 
-\author{ 
-Michael Blum <\email{michael.blum@imag.fr}> \cr
-Nicolas Bortolussi <\email{nicolas.bortolussi@imag.fr}> \cr
-Eric Durand <\email{eric.durand@imag.fr}> \cr
-Olivier François <\email{olivier.francois@imag.fr}>
+\author{
+Michael Blum <\email{michael.blum@imag.fr}>
+Nicolas Bortolussi <\email{nicolas.bortolussi@imag.fr}>
+Eric Durand <\email{eric.durand@imag.fr}>
+Olivier Francois <\email{olivier.francois@imag.fr}>
 }
 
 \seealso{
@@ -33,21 +33,21 @@ Olivier François <\email{olivier.francois@imag.fr}>
 }
 
 \examples{
-  
+
 ## The universal tree of life provided in the data sets.
 data(universal.treeshape)
-  
+
 ## One might want to extract the tree containing the Animals, the Plants,
 ##      the Aquifex and the Microsporidia
-tree1<-tipsubtree(universal.treeshape,tips=c("Animals", "Aquifex", 
+tree1<-tipsubtree(universal.treeshape,tips=c("Animals", "Aquifex",
       "Microsporidia", "Plants"))
 plot(universal.treeshape, tree1)
 
 ## Labels that do not appear in the tree are ignored
-tree2<-tipsubtree(universal.treeshape,tips=c("Human", "Animals", "Aquifex", 
+tree2<-tipsubtree(universal.treeshape,tips=c("Human", "Animals", "Aquifex",
       "Microsporidia", "Plants"))
 plot(universal.treeshape, tree2)
-  
+
 tree3<-tipsubtree(universal.treeshape,tips=c(1,3,7), numeric=TRUE)
 plot(universal.treeshape, tree3)
 }

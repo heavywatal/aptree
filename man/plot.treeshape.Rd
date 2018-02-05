@@ -21,19 +21,19 @@ Plot method for objects of class \code{"treeshape"}.
 A null value is returned. Results are displayed on graphical window.
 }
 
-\details{ 
+\details{
 If two trees are specified, they are plotted on the same window. This option is provided is order to facilitate the comparison between two trees.
 }
 
-\author{ 
-Michael Blum <\email{michael.blum@imag.fr}>\cr
-Nicolas Bortolussi <\email{nicolas.bortolussi@imag.fr}>\cr
-Eric Durand <\email{eric.durand@imag.fr}>\cr
+\author{
+Michael Blum <\email{michael.blum@imag.fr}>
+Nicolas Bortolussi <\email{nicolas.bortolussi@imag.fr}>
+Eric Durand <\email{eric.durand@imag.fr}>
 Olivier Francois <\email{olivier.francois@imag.fr}>
 }
- 
-\seealso{ 
-\code{\link[graphics]{plot}} for the basic plotting function in R 
+
+\seealso{
+\code{\link[graphics]{plot}} for the basic plotting function in R
 }
 
 \examples{

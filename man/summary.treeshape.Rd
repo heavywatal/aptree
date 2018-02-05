@@ -3,7 +3,7 @@
 
 \title{ Print a summary of an object of class "treeshape"}
 
-\usage{ 
+\usage{
 \method{summary}{treeshape}(object, \dots)
 }
 
@@ -23,33 +23,33 @@ This function prints a compact summary of a phylogenetic tree of class \code{"tr
 A NULL value is returned, the results are simply printed.
 }
 
-\author{ 
-Michael Blum <\email{michael.blum@imag.fr}> \cr
-Nicolas Bortolussi <\email{nicolas.bortolussi@imag.fr}> \cr
-Eric Durand <\email{eric.durand@imag.fr}> \cr
-Olivier François <\email{olivier.francois@imag.fr}>
+\author{
+Michael Blum <\email{michael.blum@imag.fr}>
+Nicolas Bortolussi <\email{nicolas.bortolussi@imag.fr}>
+Eric Durand <\email{eric.durand@imag.fr}>
+Olivier Francois <\email{olivier.francois@imag.fr}>
 }
 
-\seealso{ 
-\code{\link[base]{summary}}\cr
-\code{\link{colless}} for more informations about the expected values under the Yule and PDA models.\cr
+\seealso{
+\code{\link[base]{summary}}
+\code{\link{colless}} for more informations about the expected values under the Yule and PDA models.
 }
 
 \examples{
 
 ## Summary of a PDA tree with 100 tips.
-summary(rpda(100)) 
-## Note that the standard deviation is very large. 
+summary(rpda(100))
+## Note that the standard deviation is very large.
 
 ## Summary of a Yule tree with 100 tips.
-summary(ryule(100)) 
-## The standard deviation under the Yule model is much smaller than under 
+summary(ryule(100))
+## The standard deviation under the Yule model is much smaller than under
 ##      the PDA model.
 
 ## Summary of the HIV tree.
 data(hivtree.treeshape)
-summary(hivtree.treeshape) 
-## The HIV tree is much closer from the Yule model than from the PDA model. 
+summary(hivtree.treeshape)
+## The HIV tree is much closer from the Yule model than from the PDA model.
 }
 
 \keyword{manip}

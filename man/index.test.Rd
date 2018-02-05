@@ -5,8 +5,8 @@
 \title{ Perform a test on the Yule or PDA hypothesis based on the Colless or the Sackin statistic}
 
 \description{
-\code{colless.test} performs a test based on the Colless' index on tree data for the Yule or PDA model hypothesis. \cr
-\code{sackin.test} does the same with the Sackin's index. \cr
+\code{colless.test} performs a test based on the Colless' index on tree data for the Yule or PDA model hypothesis.
+\code{sackin.test} does the same with the Sackin's index.
 }
 
 \usage{
@@ -33,23 +33,23 @@ This test is based on a Monte Carlo estimate of the p-value. Replicates are gene
 \item{alternative}{the alternative hypothesis of the test.}
 }
 
-\references{ 
+\references{
 Mooers, A. O., Heard, S. B. (Mar., 1997) Inferring Evolutionnary Process from Phylogenetic Tree Shape. \emph{The Quarterly Review of Biology}, \bold{72}, 31 -- 54.
-  
+
 Blum, M., Francois, O. and Janson, S. The mean, variance and limiting distribution of two statistics sensitive to phylogenetic tree balance; manuscript available from \url{http://www-timc.imag.fr/Olivier.Francois/bfj.pdf}.
 }
 
 \author{
-Michael Blum <\email{michael.blum@imag.fr}>\cr
-Nicolas Bortolussi <\email{nicolas.bortolussi@imag.fr}>\cr
-Eric Durand <\email{eric.durand@imag.fr }>\cr
+Michael Blum <\email{michael.blum@imag.fr}>
+Nicolas Bortolussi <\email{nicolas.bortolussi@imag.fr}>
+Eric Durand <\email{eric.durand@imag.fr }>
 Olivier Francois <\email{olivier.francois@imag.fr}>
 }
 
-\seealso{ 
-\code{\link{subtree.test}}\cr
-\code{\link{colless}}\cr
-\code{\link{sackin}}\cr
+\seealso{
+\code{\link{subtree.test}}
+\code{\link{colless}}
+\code{\link{sackin}}
 }
 
 \examples{
@@ -57,28 +57,28 @@ Olivier Francois <\email{olivier.francois@imag.fr}>
 ## Test on a randomly generated Yule tree with 30 tips
 a<-rtreeshape(1,30,model="yule")
 a<-a[[1]]
-  
+
 ## Is it more balanced than a Yule tree ?
 colless.test(a,alternative="less",model="yule")
 ## Is it less balanced than a PDA tree ?
 colless.test(a,model="pda",alternative="greater")
- 
-## Test on the phylogenetic tree hiv.treeshape: is it more balanced than 
+
+## Test on the phylogenetic tree hiv.treeshape: is it more balanced than
 ##      predicted by the Yule model?
 data(hivtree.treeshape)
 ## The tree looks compatible with the null hypothesis
 colless.test(hivtree.treeshape, alternative="greater", model="yule")
- 
+
 ## What happen when we look at the top the tree?
 colless.test(cutreeshape(hivtree.treeshape, 160, "top"),
       alternative="greater", model="yule")
-colless.test(cutreeshape(hivtree.treeshape, 160, "top"), 
+colless.test(cutreeshape(hivtree.treeshape, 160, "top"),
       alternative="greater", model="pda")
 
-## Test with the Sackin's index: is the HIV tree less balanced than 
+## Test with the Sackin's index: is the HIV tree less balanced than
 ##      predicted by the PDA model?
-sackin.test(hivtree.treeshape,alternative="greater",model="pda") 
+sackin.test(hivtree.treeshape,alternative="greater",model="pda")
 ## The p.value equals to 1...
 }
-  
+
 \keyword{htest}

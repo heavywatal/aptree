@@ -26,7 +26,7 @@ Strimmer, K. and Pybus, O. G. (2001) Exploring the demographic history of DNA se
 
 \examples{
 
-data("hivtree.treeshape") 
+data("hivtree.treeshape")
 summary(hivtree.treeshape)
 plot(hivtree.treeshape)
 }

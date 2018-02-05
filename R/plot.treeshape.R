@@ -2,7 +2,7 @@
   function(x, y, ...) {
     plotone <- function(tree, ...) {
       n <- nrow(tree$merge) + 400
-      hc <- hclust(d = dist(runif(n), method = "euclidean"), method = "ward")
+      hc <- stats::hclust(d = stats::dist(stats::runif(n), method = "euclidean"), method = "ward")
       hc$merge <- tree$merge
 
       hc$height <- 1:nrow(tree$merge)
@@ -22,13 +22,13 @@
       # return(hc$height)
 
       hc$labels <- tree$names
-      hc <- as.dendrogram(hc)
+      hc <- stats::as.dendrogram(hc)
 
-      mar <- par()$mar
-      par(mar = c(1, 1, 1, 10))
-      plot(hc, horiz = TRUE, axes = FALSE, ...)
+      mar <- graphics::par()$mar
+      graphics::par(mar = c(1, 1, 1, 10))
+      graphics::plot(hc, horiz = TRUE, axes = FALSE, ...)
 
-      par(mar = mar)
+      graphics::par(mar = mar)
     }
     tree1 <- x
 
@@ -42,9 +42,9 @@
         stop("invalid arguments")
       }
 
-      layout(t(c(1, 2)))
+      graphics::layout(t(c(1, 2)))
       plotone(tree1, ...)
       plotone(tree2, ...)
-      layout(1)
+      graphics::layout(1)
     }
   }

@@ -66,12 +66,12 @@ maxlik.betasplit <- function(phylo, up = 10, remove.outgroup = FALSE, confidence
   }
   nb.tip <- max(bal[1, ])
   optim_lik_aldous <- function(phylo, remove.outgroup) {
-    optimize(f = function(x) {
+    stats::optimize(f = function(x) {
       logvrais.aldous.phylo(x, phylo, remove.outgroup)
     }, lower = -2, upper = up, maximum = TRUE)
   }
   optim_lik_aldous_bal <- function(bal) {
-    optimize(f = function(x) {
+    stats::optimize(f = function(x) {
       logvrais.aldous.bal(x, bal)
     }, lower = -2, upper = up, maximum = TRUE)
   }
@@ -84,20 +84,20 @@ maxlik.betasplit <- function(phylo, up = 10, remove.outgroup = FALSE, confidence
     thebeta <- replicate(size.bootstrap, fun_aux())
     up.conf <- 1 - ((1 - conf.level) / 2)
     low.conf <- (1 - conf.level) / 2
-    conf_interval <- quantile(thebeta, c(low.conf, up.conf))
+    conf_interval <- stats::quantile(thebeta, c(low.conf, up.conf))
   }
   if (confidence.interval == "profile") {
     if ((res$objective - 1.92) - logvrais.aldous.phylo(-2, phylo, remove.outgroup) < 0) {
       low.conf <- (-2)
     } else {
-      low.conf <- uniroot(f = function(x) {
+      low.conf <- stats::uniroot(f = function(x) {
         (res$objective - 1.92) - logvrais.aldous.phylo(x, phylo, remove.outgroup)
       }, lower = -2, upper = res$maximum)$root
     }
     if ((res$objective - 1.92) - logvrais.aldous.phylo(up, phylo, remove.outgroup) < 0) {
       up.conf <- up
     } else {
-      up.conf <- uniroot(f = function(x) {
+      up.conf <- stats::uniroot(f = function(x) {
         (res$objective - 1.92) - logvrais.aldous.phylo(x, phylo, remove.outgroup)
       }, lower = res$maximum, upper = up)$root
     }

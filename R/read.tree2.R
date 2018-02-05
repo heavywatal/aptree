@@ -38,9 +38,9 @@ read.tree2 <- function(file = "", format = "Newick", rooted = TRUE, text = NULL,
     list.obj <- list()
     for (i in 1:nb.tree) {
       list.obj[[i]] <- if (length(grep(":", STRING[[i]]))) {
-        tree.build(STRING[[i]])
+        ape::treeBuild(STRING[[i]])
       } else {
-        clado.build(STRING[[i]])
+        ape::cladoBuild(STRING[[i]])
       }
       if (sum(list.obj[[i]]$edge[, 1] == "-1") == 1) {
         warning("The root edge is apparently not correctly represented\nin your tree: this may be due to an extra pair of\nparentheses in your file; the returned object has been\ncorrected but your file may not be in a valid Newick\nformat")

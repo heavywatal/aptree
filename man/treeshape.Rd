@@ -4,7 +4,7 @@
 \title{ Builds an object of class treeshape }
 
 \description{
-\code{treeshape} builds a tree of class \code{"treeshape"} from a n*2 matrix, where n is the number of internal nodes of the tree. There are no informations about the heights of the branches in an object of class \code{"treeshape"}. Formally, a "tree shape" is a phylogenetic tree where the label of the tips are ignored. Here, the label of the tips can be kept or ignored. If a \code{names} vector is provided, then the names of species are attached to the tips of the tree. Otherwise, tips are simply labeled with their numbers in the tree. Trees of class \code{"treeshape"} are always binary.   
+\code{treeshape} builds a tree of class \code{"treeshape"} from a n*2 matrix, where n is the number of internal nodes of the tree. There are no informations about the heights of the branches in an object of class \code{"treeshape"}. Formally, a "tree shape" is a phylogenetic tree where the label of the tips are ignored. Here, the label of the tips can be kept or ignored. If a \code{names} vector is provided, then the names of species are attached to the tips of the tree. Otherwise, tips are simply labeled with their numbers in the tree. Trees of class \code{"treeshape"} are always binary.
 }
 
 \usage{
@@ -25,18 +25,18 @@ An object of class \code{"treeshape"}
 }
 
 \references{
-Semple, C. and Steel, M. (2003) Phylogenetics. \emph{Oxford Lecture Series In Mathematics and its Applications}, \bold{24}, for the mathematical definitions and tools for phylogenetic trees.\cr
+Semple, C. and Steel, M. (2003) Phylogenetics. \emph{Oxford Lecture Series In Mathematics and its Applications}, \bold{24}, for the mathematical definitions and tools for phylogenetic trees.
 }
 
-\author{ 
-Michael Blum <\email{michael.blum@imag.fr}> \cr
-Nicolas Bortolussi <\email{nicolas.bortolussi@imag.fr}> \cr
-Eric Durand <\email{eric.durand@imag.fr}> \cr
-Olivier François <\email{olivier.francois@imag.fr}> \cr
+\author{
+Michael Blum <\email{michael.blum@imag.fr}>
+Nicolas Bortolussi <\email{nicolas.bortolussi@imag.fr}>
+Eric Durand <\email{eric.durand@imag.fr}>
+Olivier Francois <\email{olivier.francois@imag.fr}>
 }
 
 \seealso{
-\code{\link{rtreeshape}}  
+\code{\link{rtreeshape}}
 }
 
 \examples{
@@ -60,7 +60,7 @@ label=c("a", "b", "c", "d", "e")
 tree2<-treeshape(nodes, label)
 plot(tree1, tree2)
 }
-  
-\keyword{datagen} 
+
+\keyword{datagen}
 
 

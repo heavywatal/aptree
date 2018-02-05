@@ -24,21 +24,21 @@ An object of class \code{numeric} which contains the Sackin's index of the tree.
 }
 
 \references{
-Mooers, A. O., Heard, S. B. (Mar., 1997) Inferring Evolutionnary Process from Phylogenetic Tree Shape. \emph{The Quarterly Review of Biology}, \bold{72}, 31 -- 54, for more details about the Sackin'index and its signification about the balance of phylogenetic trees. 
-  
-Blum, M., Francois, O. and Janson, S. The mean, variance and limiting distribution of two statistics sensitive to phylogenetic tree balance; manuscript available from \cr \url{http://www-timc.imag.fr/Olivier.Francois/bfj.pdf}.
+Mooers, A. O., Heard, S. B. (Mar., 1997) Inferring Evolutionnary Process from Phylogenetic Tree Shape. \emph{The Quarterly Review of Biology}, \bold{72}, 31 -- 54, for more details about the Sackin'index and its signification about the balance of phylogenetic trees.
+
+Blum, M., Francois, O. and Janson, S. The mean, variance and limiting distribution of two statistics sensitive to phylogenetic tree balance; manuscript available from  \url{http://www-timc.imag.fr/Olivier.Francois/bfj.pdf}.
 }
 
 \author{
-Michael Blum <\email{michael.blum@imag.fr}> \cr 
-Nicolas Bortolussi <\email{nicolas.bortolussi@imag.fr}> \cr
-Eric Durand <\email{eric.durand@imag.fr}> \cr
-Olivier François <\email{olivier.francois@imag.fr}>
+Michael Blum <\email{michael.blum@imag.fr}>
+Nicolas Bortolussi <\email{nicolas.bortolussi@imag.fr}>
+Eric Durand <\email{eric.durand@imag.fr}>
+Olivier Francois <\email{olivier.francois@imag.fr}>
 }
 
 \seealso{
-\code{\link{colless}}\cr
-\code{\link{sackin.test}}  
+\code{\link{colless}}
+\code{\link{sackin.test}}
 }
 
 \examples{
@@ -47,8 +47,8 @@ Olivier François <\email{olivier.francois@imag.fr}>
 tpda<-rtreeshape(1,tip.number=70,model="pda")
 tpda<-tpda[[1]]
 sackin(tpda,norm="pda")
-  
-## Histogram of the Sackin's indices for randomly generated Yule trees, 
+
+## Histogram of the Sackin's indices for randomly generated Yule trees,
 ##      with no normalization
 main="Histogram of Sackin's indices for randomly generated Yule trees"
 xlab="Sackin's index"

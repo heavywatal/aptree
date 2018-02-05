@@ -56,7 +56,7 @@
       root = 1
 
       for (tip in 3:tip.number) {
-        n <- floor(runif(n = 1, min = 1, max = 2 * tip - 2))
+        n <- floor(stats::runif(n = 1, min = 1, max = 2 * tip - 2))
         if (n == 1) {
           tmp = c(root, -tip)
           root = tip - 1

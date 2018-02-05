@@ -27,10 +27,10 @@ This function is meant to be an adaptation of the generic function \code{all.equ
 Returns the logical \code{TRUE} if the tree objects are similar up to a permutation of their tips. Otherwise, it returns \code{FALSE}. Heights and labels can be taken into account.
 }
 
-\author{ 
-Michael Blum <\email{michael.blum@imag.fr}>\cr
-Nicolas Bortolussi <\email{nicolas.bortolussi@imag.fr}>\cr
-Eric Durand <\email{eric.durand@imag.fr}>\cr
+\author{
+Michael Blum <\email{michael.blum@imag.fr}>
+Nicolas Bortolussi <\email{nicolas.bortolussi@imag.fr}>
+Eric Durand <\email{eric.durand@imag.fr}>
 Olivier Francois <\email{olivier.francois@imag.fr}>
 }
 
@@ -39,18 +39,18 @@ Olivier Francois <\email{olivier.francois@imag.fr}>
 }
 
 \examples{
-  
-## Trees with permutations 
+
+## Trees with permutations
 data(carnivora.treeshape)
 tree=carnivora.treeshape
 tree$merge[8,]=c(tree$merge[8,2],tree$merge[8,1])
 all.equal(tree, carnivora.treeshape)
- 
+
 ## Trees with different heights
 merge=matrix(NA, 3, 2)
 merge[,1]=c(-3,-1,2); merge[,2]=c(-4,-2,1);tree1=treeshape(merge)
 merge[,1]=c(-1,-3,1); merge[,2]=c(-2,-4,2);tree2=treeshape(merge)
-  
+
 plot(tree1, tree2)
 all.equal(tree1, tree2)
 all.equal(tree1, tree2, height=TRUE)

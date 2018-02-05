@@ -26,21 +26,21 @@
     cat(stat, "\n")
     cat("p-value = ")
     if (alternative == "two.sided") {
-      p.value <- 2 * (1 - pnorm(abs(stat)))
+      p.value <- 2 * (1 - stats::pnorm(abs(stat)))
       cat(p.value)
       cat("\n")
       cat("alternative hypothesis: ")
       cat("The tree does not fit the Yule model", "\n")
     }
     else if (alternative == "less") {
-      p.value <- pnorm(stat)
+      p.value <- stats::pnorm(stat)
       cat(p.value)
       cat("\n")
       cat("alternative hypothesis: ")
       cat("The tree is less balanced than predicted by the Yule model", "\n")
     }
     else if (alternative == "greater") {
-      p.value <- 1 - pnorm(stat)
+      p.value <- 1 - stats::pnorm(stat)
       cat(p.value)
       cat("\n")
       cat("alternative hypothesis: ")
