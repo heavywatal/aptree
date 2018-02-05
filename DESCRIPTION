@@ -1,0 +1,15 @@
+Package: aptree
+Version: 1.4.5.9000
+Title: Unofficial clone of apTreeshape
+Authors@R: person('Watal M.', 'Iwasaki', email='heavy.watal@gmail.com', role=c('aut', 'cre'))
+Description: Unofficial clone of apTreeshape.
+Depends: R (>= 3.4.0)
+License: GPL (>= 2)
+Encoding: UTF-8
+LazyData: true
+Suggests: tidyverse
+Imports:
+  ape,
+  quantreg
+URL: https://github.com/heavywatal/aptree
+BugReports: https://github.com/heavywatal/blackthunnus/aptree
