@@ -8,7 +8,8 @@
 }
 
 \usage{
-likelihood.test(tree, model = "yule", alternative="two.sided")
+likelihood.test(tree, model = c("yule", "pda"),
+  alternative=c("two.sided", "less", "greater"))
 }
 
 \arguments{

@@ -10,8 +10,10 @@
 }
 
 \usage{
-colless.test(tree, model = "yule", alternative = "less", n.mc = 500)
-sackin.test(tree, model = "yule", alternative = "less", n.mc = 500)
+colless.test(tree, model = c("yule", "pda"),
+  alternative = c("less", "greater"), n.mc = 500)
+sackin.test(tree, model = c("yule", "pda"),
+  alternative = c("less", "greater"), n.mc = 500)
 }
 
 \arguments{
