@@ -13,31 +13,26 @@ randomize_polytomy = function(phy, bin, model, p) {
         phy$edge[j, 2] = phy$edge[j, 2] + new.nodes
       }
     }
-    if (model == "pda") {
-      tmp = rpda(bin[i, 2])
-    }
-    if (model == "yule") {
-      tmp = ryule(bin[i, 2])
-    }
-    if (model == "biased") {
-      tmp = rbiased(bin[i, 2], p)
-    }
-    if (model == "aldous") {
-      tmp = raldous(bin[i, 2])
-    }
+    tmp = switch(model,
+      "pda" = rpda(bin[i, 2]),
+      "yule" = ryule(bin[i, 2]),
+      "biased" = rbiased(bin[i, 2], p),
+      "aldous" = raldous(bin[i, 2]),
+      stop("invalid model: ", model)
+    )
     tmp <- ape::as.phylo(tmp)
-    print(tmp$edge)
+    # print(tmp$edge)
     for (j in 1:length(tmp$edge)) {
       if (tmp$edge[j] > bin[i, 2]) {
         tmp$edge[j] <- tmp$edge[j] + bin[i, 1] - bin[i, 2] - 1
       }
     }
-    print(tmp$edge)
+    # print(tmp$edge)
     new.values = phy$edge[phy$edge[, 1] == bin[i, 1], 2]
     for (j in 1:bin[i, 2]) {
       tmp$edge[tmp$edge == j] = new.values[j]
     }
-    print(tmp$edge)
+    # print(tmp$edge)
     current.line = new.nodes + 1
     m = matrix(nrow = nrow(phy$edge) + new.nodes, ncol = 2)
     m[1:new.nodes, ] = tmp$edge[1:new.nodes, ]

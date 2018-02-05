@@ -14,9 +14,6 @@ normalize_sackin = function(INS, tree, norm=c("pda", "yule")) {
 #' @rdname sackin
 #' @export
 sackin = function(tree, norm=NULL) {
-  if (identical(tree, NULL)) {
-    stop("invalid tree", "\n")
-  }
   clades = smaller.clade.spectrum(tree)
   INS = sum(clades[, 1])
   if (is.null(norm)) {

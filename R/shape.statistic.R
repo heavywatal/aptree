@@ -13,9 +13,6 @@ normalize_shape_statistic = function(x, tree, norm=c("pda", "yule")) {
 #' @rdname statistic
 #' @export
 shape.statistic = function(tree, norm=NULL) {
-  if (identical(tree, NULL)) {
-    stop("invalid tree", "\n")
-  }
   clades = smaller.clade.spectrum(tree)
   res = sum(log(clades[, 1] - 1))
   if (is.null(norm)) {

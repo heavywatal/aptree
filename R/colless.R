@@ -14,9 +14,6 @@ normalize_colless = function(ICN, tree, norm=c("pda", "yule")) {
 #' @rdname colless
 #' @export
 colless = function(tree, norm=NULL) {
-  if (identical(tree, NULL)) {
-    stop("invalid tree", "\n")
-  }
   clades = smaller.clade.spectrum(tree)
   ICN = sum(abs(clades[, 1] - 2 * clades[, 2]))
   if (is.null(norm)) {
