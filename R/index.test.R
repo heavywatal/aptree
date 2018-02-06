@@ -1,51 +1,5 @@
 #' @rdname index-test
 #' @export
-normalize = function(x, tree, index=c("colless", "sackin"), norm=c("", "pda", "yule")) {
-  if (is.null(norm)) return(x)
-  norm = match.arg(norm)
-  if (norm == "") return(x)
-  index = match.arg(index)
-  leaf_nb <- nrow(tree$merge) + 1
-  if (norm == "pda") {
-    x / (leaf_nb ^ 1.5)
-  } else if (index == "colless") {
-    EICN <- leaf_nb * log(leaf_nb) + (0.57721566 - 1 - log(2)) * leaf_nb
-    (x - EICN) / leaf_nb
-  } else {
-    EINS <- 2 * leaf_nb * sum(1 / 2:leaf_nb)
-    (x - EINS) / leaf_nb
-  }
-}
-
-#' @rdname index-test
-#' @export
-colless = function(tree, norm=NULL) {
-  clades = smaller.clade.spectrum(tree)
-  stat = sum(abs(clades[, 1] - 2 * clades[, 2]))
-  normalize(stat, tree, index="colless", norm=norm)
-}
-
-#' @rdname index-test
-#' @export
-sackin = function(tree, norm=NULL) {
-  clades = smaller.clade.spectrum(tree)
-  stat = sum(clades[, 1])
-  normalize(stat, tree, index="sackin", norm=norm)
-}
-
-#' @rdname index-test
-#' @export
-calc_stat = function(tree, index=c("colless", "sackin"), norm=c("", "pda", "yule")) {
-  index = match.arg(index)
-  if (index == "colless") {
-    colless(tree, norm=norm)
-  } else {
-    sackin(tree, norm=norm)
-  }
-}
-
-#' @rdname index-test
-#' @export
 index.test = function(tree, index=c("colless", "sackin"), model=c("yule", "pda"), alternative=c("less", "greater"), n.mc=500) {
   stopifnot(inherits(tree, "treeshape"))
   index = match.arg(index)

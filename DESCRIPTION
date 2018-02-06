@@ -10,7 +10,9 @@ LazyData: true
 Suggests: tidyverse
 Imports:
   ape,
-  quantreg
+  purrr,
+  quantreg,
+  tibble
 URL: https://github.com/heavywatal/aptree
 BugReports: https://github.com/heavywatal/blackthunnus/aptree
 RoxygenNote: 6.0.1
