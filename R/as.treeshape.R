@@ -20,7 +20,7 @@ randomize_polytomy = function(phy, bin, model, p) {
       "aldous" = raldous(bin[i, 2]),
       stop("invalid model: ", model)
     )
-    tmp <- ape::as.phylo(tmp)
+    tmp <- as.phylo.treeshape(tmp)
     # print(tmp$edge)
     for (j in 1:length(tmp$edge)) {
       if (tmp$edge[j] > bin[i, 2]) {
@@ -46,6 +46,7 @@ randomize_polytomy = function(phy, bin, model, p) {
     }
     phy$edge = m
   }
+  phy
 }
 
 #' @rdname treeshape

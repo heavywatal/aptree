@@ -28,7 +28,7 @@ maxlik.betasplit <- function(phylo, up = 10, remove.outgroup = FALSE, confidence
   }
   logvrais.aldous.phylo <- function(b, phylo, remove.outgroup = TRUE) {
     if (class(phylo) == "treeshape") {
-      bal <- bbalance(ape::as.phylo(phylo))
+      bal <- bbalance(as.phylo.treeshape(phylo))
     }
     if (class(phylo) == "phylo") {
       bal <- bbalance(phylo)
@@ -51,7 +51,7 @@ maxlik.betasplit <- function(phylo, up = 10, remove.outgroup = FALSE, confidence
     }, b = b, MARGIN = 1))))
   }
   if (class(phylo) == "treeshape") {
-    bal <- bbalance(ape::as.phylo(phylo))
+    bal <- bbalance(as.phylo.treeshape(phylo))
   }
   if (class(phylo) == "phylo") {
     bal <- bbalance(phylo)
