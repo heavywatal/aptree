@@ -1,3 +1,4 @@
+#' @importFrom ape as.phylo
 #' @export
 as.phylo.treeshape <- function(x, ...) {
   set.height <- function(edge) {

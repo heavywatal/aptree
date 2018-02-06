@@ -1,3 +1,4 @@
+#' @importFrom ape is.binary
 #' @export
 is.binary.phylo <- function(phy) {
   if (class(phy) != "phylo") {
